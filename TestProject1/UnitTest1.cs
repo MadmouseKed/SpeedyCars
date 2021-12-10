@@ -19,6 +19,7 @@ namespace TestProject1
             Assert.AreEqual(VExpected1, auto.getVelocity());
             auto.updateVelocity(4.0f, false);
             Assert.AreEqual(VExpected2, auto.getVelocity());
+            Assert.AreEqual(2.4f, auto.getLength());
         }
         [TestMethod]
         public void TestRoad()
@@ -28,6 +29,7 @@ namespace TestProject1
             Assert.AreEqual(5.0f, weg.getNextLightDistance(0.0f));
             Assert.AreEqual(5.0f, weg.getNextLightDistance(25.0f));
             Assert.AreEqual(20.0f, weg.getNextLightDistance(60.0f));
+            Assert.AreEqual(numbers, weg.getLights());
         }
         [TestMethod]
         public void TestCarLength()
