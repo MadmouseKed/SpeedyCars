@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace SpeedyCars
@@ -64,21 +65,20 @@ namespace SpeedyCars
 
         public float getNextLightDistance(float distance)
         {
+            Debug.WriteLine("getNextLightDistance called:");
             if(distance < roadLength)
             {
-                float pick = 0.0f;
-                bool picked = true;
+                int i = 0;
+                float pick = stopLights[i];
                 float result;
                 foreach (float lightDistance in stopLights)
                 {
-                    while (picked)
+                    if(lightDistance > distance)
                     {
-                        if (lightDistance >= distance)
-                        {
-                            pick = lightDistance;
-                            picked = false;
-                        }
+                        pick = stopLights[i];
+                        break;
                     }
+                    i += 1;
                 }
                 result = pick - distance;
                 return result;
