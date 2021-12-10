@@ -90,4 +90,13 @@ namespace SpeedyCars
             }
         }
     }
+
+    public static class Calculate
+    {
+        public static float CarLength(float velocity, float carLength, float distanceTime)
+        {
+            float result = velocity * distanceTime + carLength;
+            return result;
+        }
+    }
 }

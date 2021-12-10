@@ -23,17 +23,16 @@ namespace TestProject1
         [TestMethod]
         public void TestRoad()
         {
-            Debug.WriteLine("TestRoad");
-            float VExpected1 = 5.0f;
-            float VExpected2 = 20.0f;
-            Debug.WriteLine("Hoi2");
             List<float> numbers = new List<float>() { 5.0f, 30.0f, 50.0f, 80.0f };
             SpeedyCars.Road weg = new SpeedyCars.Road(100.0f, numbers);
-            Debug.WriteLine("Hoi3");
-            Assert.AreEqual(VExpected1, weg.getNextLightDistance(25.0f));
-            Debug.WriteLine("Hoi4");
-            Assert.AreEqual(VExpected2, weg.getNextLightDistance(60.0f));
-            Debug.WriteLine("Hoi5");
+            Assert.AreEqual(5.0f, weg.getNextLightDistance(0.0f));
+            Assert.AreEqual(5.0f, weg.getNextLightDistance(25.0f));
+            Assert.AreEqual(20.0f, weg.getNextLightDistance(60.0f));
+        }
+        [TestMethod]
+        public void TestCarLength()
+        {
+            Assert.AreEqual(12.0f, SpeedyCars.Calculate.CarLength(5.0f, 2.0f, 2.0f));
         }
     }
 }
