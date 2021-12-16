@@ -155,5 +155,34 @@ namespace SpeedyCars
             float result = velocity * distanceTime + carLength; // m/s * s + m = m
             return result;
         }
+        /// <summary>
+        /// Determines whether a car has enough distance to target to be able to break.
+        /// </summary>
+        /// <param name="velocity"></param>
+        /// Current speed in m/s of object.
+        /// <param name="deAcceleration"></param>
+        /// Object's ability to loose speed m/s^2.
+        /// <param name="distance"></param>
+        /// Distance between object and end.
+        /// <returns></returns>
+        /// true if object can succesfully come to a standstill if it starts de accelerating right now.
+        /// false if object can not succesfully  come to a standstill if it starts de accelerating right now.
+        public static bool CanBreak(float velocity, float deAcceleration, float distance)
+        {
+            float timeNeeded = velocity / deAcceleration;
+            float traveled = velocity * timeNeeded - 0.5f * deAcceleration * timeNeeded * timeNeeded;
+            if(traveled > distance)
+            {
+                return false;
+            }
+            else if(traveled <= distance)
+            {
+                return true;
+            }
+            else
+            {
+                throw new Exception("One of the values in CanBreak is not a number. (Neither float nor integer)");
+            }
+        } 
     }
 }

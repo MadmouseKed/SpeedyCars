@@ -36,5 +36,12 @@ namespace TestProject1
         {
             Assert.AreEqual(12.0f, SpeedyCars.Calculate.CarLength(5.0f, 2.0f, 2.0f));
         }
+        [TestMethod]
+        public void TestCanBrea()
+        {
+            //d = v0*t + 0.5 * a * t * t
+            Assert.AreEqual(true, SpeedyCars.Calculate.CanBreak(20.0f, 10.0f, 20.0f));
+            Assert.AreEqual(false, SpeedyCars.Calculate.CanBreak(20.0f, 10.0f, 19.0f));
+        }
     }
 }
