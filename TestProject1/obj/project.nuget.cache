@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QdFI3hpZtm4FA9EAE24e22T8bzrDm6blObP3V0Y4KA5xOwJwtzTqWMKakPo3exLxq/TPq7af+1mtd/m445ACdg==",
+  "dgSpecHash": "o+1W6yaaCgbRVYgEZguw8KL41vbYs5JLe/COaIp5Dn3amGXvAv7tWvLIzaXJ6iVqR8E583o+o+QvZiLDXHN0rA==",
   "success": true,
-  "projectFilePath": "F:\\Jaar2\\Simulatie\\Week4\\SpeedyCars\\TestProject1\\TestProject1.csproj",
+  "projectFilePath": "F:\\Jaar2\\Simulatie\\Week4&5&6\\SpeedyCars\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gebruiker\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\Gebruiker\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

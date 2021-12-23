@@ -136,6 +136,81 @@ namespace SpeedyCars
         }
     }
 
+    public class Stoplight
+    {
+        float greenTime = 100.0f;
+        float orangeTime = 20.0f;
+
+        public Stoplight(float green, float orange)
+        {
+            greenTime = green;
+            orangeTime = orange;
+        }
+
+        public List<int> lightState(float time)
+        {
+            float maxTime = 4 * (greenTime + orangeTime);
+            if(time > maxTime)
+            {
+                int divider = Convert.ToInt16 (time / maxTime);
+                time = time - maxTime * divider;
+            }
+
+            List<int> result;
+            if (time < greenTime)
+            {
+                result = new List<int>{ 0, 2, 2, 2};
+                return result;
+            }
+            else if(time < greenTime + orangeTime)
+            {
+                result = new List<int> { 1, 2, 2, 2 };
+                return result;
+            }
+
+            else if (time < 2 * (greenTime))
+            {
+                result = new List<int> { 2, 0, 2, 2 };
+                return result;
+            }
+            else if (time < 2 * (greenTime + orangeTime))
+            {
+                result = new List<int> { 2, 1, 2, 2 };
+                return result;
+            }
+
+            else if (time < 3 * greenTime)
+            {
+                result = new List<int> { 2, 2, 0, 2 };
+                return result;
+            }
+            else if (time < 3 * (greenTime + orangeTime))
+            {
+                result = new List<int> { 2, 2, 1, 2 };
+                return result;
+            }
+
+            else if (time < 4 * greenTime)
+            {
+                result = new List<int> { 2, 2, 2, 0 };
+                return result;
+            }
+            else if (time < 4 * (greenTime + orangeTime))
+            {
+                result = new List<int> { 2, 2, 2, 1 };
+                return result;
+            }
+
+            else
+            {
+                result = new List<int> { 2, 2, 2, 2 };
+                return result;
+            }
+
+
+        }
+    }
+
     public static class Calculate
     {
         /// <summary>
